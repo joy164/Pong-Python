@@ -15,6 +15,9 @@ raqueta1 = (29, 15, 148)
 speed = 10
 speedPelotaX = 7
 speedPelotaY = 7
+#fuentes
+consolas = pygame.font.match_font('consolas')
+
 #funciones
 def close_verify():
     #recorriendo todos los eventos de la ventana 
