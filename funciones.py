@@ -1,9 +1,6 @@
+from typing import Tuple
 import pygame, sys
 
-def raqueta(screen, color, x, y, largo, ancho):
-    pygame.draw.rect(screen, color, (x, y,ancho, largo))
-def pelota(screen, color, x, y, radio):
-    pygame.draw.circle(screen, color, (x, y),radio)
 def contorno(screen, color, x, y, largo, alto, ancho):
     pygame.draw.line(screen, color, (x, y), (x + largo, y), ancho)
     pygame.draw.line(screen, color, (x, y-2), (x, y + alto), ancho)
@@ -15,7 +12,7 @@ def cancha(screen, color, x, y, largo, radio, ancho):
 
 def texto(screen, color, x, y, dimensiones, texto, fuente):
     tipo_fuente = pygame.font.Font(fuente, dimensiones)
-    superficie = tipo_fuente.render(texto, False, color)
+    superficie = tipo_fuente.render(texto, True, color)
     contenedor = superficie.get_rect()
     contenedor.center = (x, y)
     screen.blit(superficie, contenedor)
